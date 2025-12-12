@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Кубок Огня — Пригласительный сайт (яркий)</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600&family=Uncial+Antiqua&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --navy: #041927;
+            /* мягкий тёмно-синий */
+            --sky: #6ec6ff;
+            /* небесно-голубой */
+            --sky-2: #3fb0ff;
+            /* второй оттенок */
+            --card: #e6f8ff;
+            /* светлый оттенок для акцентов */
+            --muted: rgba(230, 248, 255, 0.85);
+            --glass: rgba(255, 255, 255, 0.04);
+            --accent-glow: rgba(63, 176, 255, 0.18);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', system-ui, Segoe UI, Roboto, Arial, sans-serif;
+            background: linear-gradient(180deg, #02121b 0%, var(--navy) 45%, #03243a 100%);
+            color: var(--muted);
+            -webkit-font-smoothing: antialiased
+        }
+
+        a {
+            color: var(--sky);
+            text-decoration: none
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 36px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(0, 0, 0, 0.12));
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03)
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px
+        }
+
+        .crest {
+            width: 62px;
+            height: 62px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(180deg, #042836, #063b4a);
+            box-shadow: 0 18px 40px rgba(2, 20, 30, 0.6), inset 0 -8px 18px rgba(0, 0, 0, 0.45)
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 18px;
+            color: var(--sky);
+            letter-spacing: 1px;
+            font-family: 'Playfair Display', serif
+        }
+
+        .logo .sub {
+            font-size: 12px;
+            color: rgba(230, 248, 255, 0.8)
+        }
+
+        nav a {
+            margin-left: 18px;
+            font-size: 15px;
+            color: rgba(230, 248, 255, 0.85)
+        }
+
+        main {
+            padding: 44px;
+            display: grid;
+            grid-template-columns: 1fr 440px;
+            gap: 28px;
+            align-items: start
+        }
+
+        /* Card / parchment */
+        .card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.18));
+            padding: 26px;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(1, 12, 18, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.03)
+        }
+
+        .intro {
+            padding: 26px;
+            border-radius: 14px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(2, 18, 24, 0.5));
+        }
+
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 44px;
+            margin: 0 0 8px;
+            color: var(--sky);
+            text-shadow: 0 6px 28px var(--accent-glow)
+        }
+
+        .subtitle {
+            margin: 0 0 14px;
+            color: rgba(230, 248, 255, 0.85);
+            font-size: 15px
+        }
+
+        .chapter {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            color: rgba(220, 240, 255, 0.95)
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, rgba(110, 198, 255, 0.12), rgba(63, 176, 255, 0.09));
+            color: var(--sky);
+            font-weight: 700;
+            margin-right: 8px
+        }
+
+        .cup-graphic {
+            display: flex;
+            align-items: center;
+            gap: 18px
+        }
+
+        .cup-svg {
+            width: 132px;
+            height: 132px;
+            filter: drop-shadow(0 18px 30px rgba(63, 176, 255, 0.12))
+        }
+
+        .info {
+            position: relative;
+            padding: 20px;
+            border-radius: 14px;
+            background: linear-gradient(180deg, rgba(6, 18, 28, 0.6), rgba(0, 0, 0, 0.5));
+            min-height: 320px
+        }
+
+        .info h3 {
+            margin-top: 0;
+            color: var(--sky);
+            font-family: 'Playfair Display', serif
+        }
+
+        .meta {
+            font-size: 14px;
+            color: rgba(220, 245, 255, 0.95);
+            line-height: 1.6
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 12px 18px;
+            border-radius: 12px;
+            background: linear-gradient(180deg, var(--sky), var(--sky-2));
+            color: #021022;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 12px 40px var(--accent-glow);
+            border: none;
+            transition: transform .16s ease, box-shadow .16s ease
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(63, 176, 255, 0.22)
+        }
+
+        footer {
+            padding: 18px 36px;
+            color: rgba(210, 235, 245, 0.85);
+            font-size: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            display: flex;
+            justify-content: space-between
+        }
+
+        /* Register page */
+        #registerWrap {
+            padding: 36px
+        }
+
+        .register-card {
+            background: linear-gradient(180deg, #052033 0%, #02121b 100%);
+            padding: 22px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.04)
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 6px;
+            font-size: 13px;
+            color: rgba(210, 235, 245, 0.95)
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.005));
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        .small {
+            font-size: 13px;
+            color: rgba(210, 235, 245, 0.85)
+        }
+
+        /* 'СКОРО' overlay */
+        .soon {
+            position: relative;
+            margin-top: 12px
+        }
+
+        .soon .badge {
+            position: absolute;
+            right: 6px;
+            top: -22px;
+            background: linear-gradient(180deg, var(--sky-2), var(--sky));
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-weight: 900;
+            color: #021022;
+            letter-spacing: 1.6px;
+            box-shadow: 0 18px 44px rgba(63, 176, 255, 0.18)
+        }
+
+        .flame {
+            position: absolute;
+            left: -26px;
+            top: -24px;
+            width: 72px;
+            height: 72px;
+            opacity: 0.98
+        }
+
+        .disabled-note {
+            margin-top: 10px;
+            padding: 12px;
+            border-radius: 10px;
+            background: linear-gradient(180deg, rgba(110, 198, 255, 0.03), rgba(0, 0, 0, 0.24));
+            color: rgba(210, 235, 245, 0.95)
+        }
+
+        .countdown {
+            font-family: 'Playfair Display', serif;
+            margin-top: 12px;
+            font-size: 18px;
+            color: rgba(210, 235, 245, 0.95)
+        }
+
+        /* subtle decorative stars */
+        .stars {
+            position: absolute;
+            right: 12px;
+            top: 10px;
+            opacity: 0.12;
+            filter: blur(1px)
+        }
+
+        @media (max-width:980px) {
+            main {
+                grid-template-columns: 1fr;
+                padding: 20px
+            }
+
+            header {
+                padding: 14px
+            }
+
+            footer {
+                padding: 12px
+            }
+        }
+        @media (max-width: 480px) {
+            .cup-svg{
+                display: none;
+            }
+            .flame{
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <div class="crest">
+                <!-- ЗАГРУЗКА ЛОГО (замените src на свой файл) -->
+                <img src="./img/logo.jpg" alt="Лого" style="width:100%;height:100%;object-fit:contain;border-radius:12px;">
+            </div>
+            <div>
+                <h1 style="font-size:18px;margin:0">Кубок Огня</h1>
+                <div class="sub">Турнир программистов — ПЛ №99</div>
+            </div>
+        </div>
+        <nav>
+            <a href="#home" onclick="go('home');return false">Описание</a>
+            <a href="#register" onclick="go('register');return false">Регистрация</a>
+        </nav>
+    </header>
+
+    <main id="homeMain">
+        <section id="home" class="card intro">
+            <div class="cup-graphic">
+                <!-- ПОМЕСТИТЕ СВОЮ КАРТИНКУ КУБКА (например cup.png) -->
+                <img src="./img/ChatGPT Image Dec 12, 2025, 11_48_18 AM.jpg" alt="Кубок" class="cup-svg"
+                    style="width:132px;height:132px;object-fit:contain;filter:drop-shadow(0 18px 30px rgba(63,176,255,0.12));">
+                <div>
+                    <h2 class="title">Кубок Огня: Турнир программистов</h2>
+                    <p class="subtitle">18–20 декабря 2025 • Профессиональный лицей информационных технологий №99</p>
+                    <div class="chapter">
+                        <span class="pill">Цель</span>
+                        Повышение практических навыков студентов, развитие командного взаимодействия и проектного
+                        мышления. Командные испытания, квест и финальный проект — всё в духе магического соревнования.
+                    </div>
+                    <div class="chapter">
+                        <strong>Формат:</strong> очное соревнование, 4 обязательных испытания, доп. квест. Команда 3–5
+                        человек.
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top:18px">
+                <h3 style="color:var(--sky);margin:0 0 10px;font-family:'Playfair Display',serif">Ключевые испытания
+                </h3>
+                <div class="chapter">
+                    <strong>Заклинание Логики</strong> — алгоритмические задачи (макс. 15 баллов).<br>
+                    <strong>Зелье Переменных</strong> — восстановление мини-проекта (25 баллов).<br>
+                    <strong>Командный Турнир</strong> — создание/решение задач (25 баллов).<br>
+                    <strong>Финальный проект</strong> — мини-веб/прототип (50 баллов).
+                </div>
+
+                <div class="chapter">
+                    <strong>Номинации и призы:</strong> Кубок Огня, дипломы, подарки и денежные призы. Подробности в
+                    программе мероприятия.
+                </div>
+            </div>
+        </section>
+
+        <aside class="card info">
+            <h3>Информация</h3>
+            <div class="meta">
+                <strong>Даты:</strong> 18–20 декабря 2025<br>
+                <strong>Место:</strong> Актовый зал ПЛ №99 (ул. М. Горького 18)<br>
+                <strong>Команды:</strong> 3–5 человек • Студенты лицеев, колледжей и вузов
+            </div>
+
+            <div style="margin-top:16px">
+                <button class="btn" onclick="go('register')">ЗАРЕГИСТРИРОВАТЬ КОМАНДУ</button>
+            </div>
+
+            <div style="margin-top:18px;font-size:13px;color:rgba(210,235,245,0.85)">Организатор: Профессиональный лицей
+                информационных технологий № 99 при Президенте Кыргызской Республики</div>
+            <div style="margin-top:12px;font-size:12px;color:rgba(210,235,245,0.75)">Программа мероприятия использована
+                для текста и расписания.</div>
+        </aside>
+    </main>
+
+    <!-- Register section -->
+    <div id="register" style="display:none;padding:48px" aria-hidden>
+        <div id="registerWrap">
+            <div class="register-card">
+                <h2 style="margin:0 0 6px;font-family:'Playfair Display',serif;color:var(--sky);">Регистрация команд
+                </h2>
+                <p class="small">Заполните данные команды. Внимание: регистрация пока не открыта.</p>
+
+                <div class="soon">
+                    <div class="badge" style="transform:rotate(-6deg);">СКОРО</div>
+                    <!-- ЗДЕСЬ МОЖНО ЗАГРУЗИТЬ СВОЮ ИКОНКУ ОГНЯ -->
+                    <img src="./img/nn.jpg" alt="Пламя" class="flame">
+
+                    <div style="margin-left:88px">
+                        <div class="disabled-note">Регистрация откроется в ближайшее время. Следите за обновлениями в
+                            рассылке и на сайте организаторов.</div>
+                        <div class="countdown" id="countdown">Дата открытия: уточняется</div>
+                    </div>
+                </div>
+
+                <form id="regForm" style="margin-top:18px;opacity:0.6;pointer-events:none">
+                    <label>Название команды</label>
+                    <input placeholder="Например: Небесные Коды" />
+                    <label>Учебное заведение</label>
+                    <input />
+                    <label>ФИО капитана</label>
+                    <input />
+                    <label>Контакт (email или телефон)</label>
+                    <input />
+                    <label>Краткое описание компетенций</label>
+                    <textarea rows="4"></textarea>
+
+                    <div style="display:flex;gap:12px;margin-top:12px">
+                        <button class="btn" type="button" disabled>Отправить заявку</button>
+                        <button class="btn" type="button" onclick="go('home')"
+                            style="background:transparent;color:var(--sky);border:1px solid rgba(110,198,255,0.08)">Вернуться</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>© Кубок Огня — ПЛ №99 • 2025</div>
+        <div style="color:rgba(210,235,245,0.85)">Контакты организатора: (уточняются)</div>
+    </footer>
+
+    <script>
+        function go(page) {
+            document.querySelectorAll('main, #register').forEach(el => el.style.display = 'none');
+            if (page === 'home') {
+                document.getElementById('homeMain').style.display = 'grid';
+                history.replaceState(null, '', '#home');
+            } else if (page === 'register') {
+                document.getElementById('register').style.display = 'block';
+                history.replaceState(null, '', '#register');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        if (location.hash.includes('register')) go('register'); else go('home');
+
+        // Если нужно — вставьте дату открытия здесь в формате 'YYYY-MM-DDTHH:MM:SS'
+        (function () {
+            const openDate = null; // пример: new Date('2025-11-30T10:00:00')
+            const cd = document.getElementById('countdown');
+            if (!openDate) { cd.textContent = 'Дата открытия: уточняется'; return }
+            function update() {
+                const now = new Date();
+                const diff = openDate - now;
+                if (diff <= 0) { cd.textContent = 'Регистрация открыта!'; document.getElementById('regForm').style.opacity = 1; document.getElementById('regForm').style.pointerEvents = 'all'; return }
+                const d = Math.floor(diff / 86400000); const h = Math.floor(diff % 86400000 / 3600000); const m = Math.floor(diff % 3600000 / 60000); const s = Math.floor(diff % 60000 / 1000);
+                cd.textContent = `Открытие: ${d}д ${h}ч ${m}м ${s}с`;
+            }
+            setInterval(update, 1000);
+            update();
+        })();
+    </script>
+</body>
+
+</html>
